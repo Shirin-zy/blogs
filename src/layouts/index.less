@@ -1,0 +1,168 @@
+.navs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+
+  &.top {
+    background: transparent;
+    opacity: 0.9;
+    transform: translateY(-20px);
+
+    .logo {
+      padding: 1.5rem 0;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .logoText {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  &.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(0);
+
+    .navContent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .logo {
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+      .logoText {
+        font-size: 1.8rem;
+        font-weight: bold;
+        background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scale(1.1);
+      }
+    }
+
+    .navList {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+
+      li {
+        margin-left: 2.5rem;
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        align-self: center;
+
+        .languageSwitch {
+          display: flex;
+          align-items: center;
+          padding: 2px;
+          z-index: 1000;
+
+          .langBtn {
+            background: none;
+            border: none;
+            font-size: 14px;
+            padding: 4px 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #dee1e6;
+
+            &.active {
+              color: #676b73;
+              font-weight: bold;
+            }
+          }
+
+          .divider {
+            width: 2px;
+            height: 30px;
+            background-color: #dee1e6;
+            transform: rotate(30deg);
+            margin: 0 2px;
+          }
+        }
+
+        &:nth-child(1) {
+          transition-delay: 0.1s;
+        }
+        &:nth-child(2) {
+          transition-delay: 0.15s;
+        }
+        &:nth-child(3) {
+          transition-delay: 0.2s;
+        }
+        &:nth-child(4) {
+          transition-delay: 0.25s;
+        }
+
+        a {
+          color: #2c3e50;
+          text-decoration: none;
+          font-weight: 500;
+          position: relative;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          &:hover {
+            color: #3498db;
+            transform: translateY(-2px);
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 为页面内容添加顶部间距，避免被固定导航栏遮挡 */
+body {
+  padding-top: 0px;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+}

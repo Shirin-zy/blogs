@@ -1,0 +1,12 @@
+.bg {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #f8f9fc;
+  /* 浅蓝灰色背景 */
+  background-image: linear-gradient(rgba(187, 195, 207, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(187, 195, 207, 0.08) 1px, transparent 1px);
+  background-size: 25px 25px;
+  /* 调整网格大小 */
+  background-position: center center;
+  /* 居中网格 */
+}
