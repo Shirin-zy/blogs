@@ -7,8 +7,8 @@ interface PlayerProps {
 }
 
 const Player: React.FC<PlayerProps> = ({
-  videoSrc = "https://fastcdn.mihoyo.com/content-v2/plat/100679/2de4c434ac1296d16d71b9e4dd4d65db_4377941326290013663.mp4",
-  // videoSrc = "",
+  // videoSrc = "https://fastcdn.mihoyo.com/content-v2/plat/100679/2de4c434ac1296d16d71b9e4dd4d65db_4377941326290013663.mp4",
+  videoSrc = "",
   posterSrc,
 }) => {
   const [showModal, setShowModal] = useState(false);
